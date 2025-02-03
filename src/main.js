@@ -1,8 +1,4 @@
-import { duplicationPathImage } from './js/game/duplicationPathImage.js';
-import { GAME_STATE } from './js/game/gameState.js';
+import {choiceLevel} from './js/game/choiceLevel.js';
+choiceLevel()
 
-duplicationPathImage();
 
-document.addEventListener( 'selected-level', () => {
-    console.log( GAME_STATE.gameElements );
-} );

@@ -1,9 +1,8 @@
 export const GAME_STATE = {
-    gameElements: {},
+    gameElements: [],
     STORAGE_KEY: 'playerScoreboard',
     activeChoice: [],
 };
-
 
 export const GAME_CONFIG = {
     QUANTITY_CARDS: {
@@ -20,6 +19,10 @@ export const SELECTORS = {
     // BASIC_LEVEL_BUTTON: document.querySelector( '.basic' ),
     // MEDIUM_LEVEL_BUTTON: document.querySelector( '.medium' ),
     // HARD_LEVEL_BUTTON: document.querySelector( '.hard' ),
+    CARDS_BOARD_CONTAINER: document.querySelector( '.game-screen__game-board' ),
 };
 
-export const CLASSES = {};
+export const CLASSES = {
+    VISIBLE_CARD: 'visible-card',
+    HIDDEN_CARD: 'hidden-card',
+};
