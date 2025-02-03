@@ -15,14 +15,14 @@ export const GAME_CONFIG = {
 
 export const SELECTORS = {
     ALL_BUTTONS_CONTAINER: document.querySelector( '.game-screen__choice-level' ),
-    // EASY_LEVEL_BUTTON: document.querySelector( '.easy' ),
-    // BASIC_LEVEL_BUTTON: document.querySelector( '.basic' ),
-    // MEDIUM_LEVEL_BUTTON: document.querySelector( '.medium' ),
-    // HARD_LEVEL_BUTTON: document.querySelector( '.hard' ),
     CARDS_BOARD_CONTAINER: document.querySelector( '.game-screen__game-board' ),
+    test: document.querySelector( '.game-screen__game-board .result' ),
 };
 
 export const CLASSES = {
-    VISIBLE_CARD: 'visible-card',
-    HIDDEN_CARD: 'hidden-card',
+    CARD_VISIBLE: 'card-visible',
+    CARD_HIDDEN: 'card-hidden',
+    ELEMENT_VISIBLE: 'element-visible',
+    ELEMENT_HIDDEN: 'element-hidden',
+    NO_INTERACTION: 'no-interaction',
 };
