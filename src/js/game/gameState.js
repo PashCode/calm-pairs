@@ -24,4 +24,5 @@ export const CLASSES = {
     ELEMENT_VISIBLE: 'element-visible',
     ELEMENT_HIDDEN: 'element-hidden',
     NO_INTERACTION: 'no-interaction',
+    CARDS_CONTAINER: 'cards-container'
 };
