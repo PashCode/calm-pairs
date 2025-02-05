@@ -19,6 +19,7 @@ export const SELECTORS = {
 };
 
 export const CLASSES = {
+    CARD: 'card',
     CARD_VISIBLE: 'card-visible',
     CARD_HIDDEN: 'card-hidden',
     ELEMENT_VISIBLE: 'element-visible',
