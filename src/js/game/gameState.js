@@ -15,8 +15,7 @@ export const GAME_CONFIG = {
 
 export const SELECTORS = {
     ALL_BUTTONS_CONTAINER: document.querySelector( '.game-screen__choice-level' ),
-    CARDS_BOARD_CONTAINER: document.querySelector( '.game-screen__game-board' ),
-    test: document.querySelector( '.game-screen__game-board .result' ),
+    CARDS_BOARD_CONTAINER: document.querySelector( '.game-screen__game-board .cards-board' ),
 };
 
 export const CLASSES = {
