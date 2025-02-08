@@ -1,5 +1,5 @@
 import { CLASSES, GAME_STATE, SELECTORS } from './gameState.js';
-import { addClass } from '../utils/addClass.js';
+import { classUtils } from '../utils/domUtils.js';
 
 export function renderCards() {
   GAME_STATE.gameElements.forEach( ( card ) => {
@@ -10,7 +10,7 @@ export function renderCards() {
 
     createImagesContainer.append( hiddenCard );
 
-    addClass( createImagesContainer, CLASSES.CARDS_CONTAINER );
+    classUtils.addClass( createImagesContainer, CLASSES.CARDS_CONTAINER );
     SELECTORS.CARDS_BOARD_CONTAINER.append( createImagesContainer );
 
     card.hiddenTag = hiddenCard;
@@ -21,8 +21,8 @@ export function renderCards() {
 function createCardsImage( src ) {
   const createImageTag = document.createElement( 'img' );
   src.includes( 'hidden' )
-    ? addClass( createImageTag, CLASSES.CARD_HIDDEN, CLASSES.CARD )
-    : addClass( createImageTag, CLASSES.CARD_VISIBLE, CLASSES.CARD );
+    ? classUtils.addClass( createImageTag, CLASSES.CARD_HIDDEN, CLASSES.CARD )
+    : classUtils.addClass( createImageTag, CLASSES.CARD_VISIBLE, CLASSES.CARD );
   createImageTag.src = src;
   return createImageTag;
 }

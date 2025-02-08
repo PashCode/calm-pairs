@@ -1,5 +1,3 @@
-export const IMAGE_CACHE = [];
-
 export const GAME_STATE = {
   gameElements: [],
   STORAGE_KEY: 'playerScoreboard',
@@ -13,7 +11,7 @@ export const GAME_CONFIG = {
     medium: [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '10' ],
     hard: [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15' ],
   },
-  FLIP_DELAY: 400
+  FLIP_DELAY: 400,
 };
 
 export const SELECTORS = {
