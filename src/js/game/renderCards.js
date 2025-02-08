@@ -1,28 +1,28 @@
-import { GAME_STATE, CLASSES, SELECTORS } from './gameState.js';
+import { CLASSES, GAME_STATE, SELECTORS } from './gameState.js';
 import { addClass } from '../utils/addClass.js';
 
 export function renderCards() {
-    GAME_STATE.gameElements.forEach( ( card ) => {
-        const createImagesContainer = document.createElement( 'div' );
+  GAME_STATE.gameElements.forEach( ( card ) => {
+    const createImagesContainer = document.createElement( 'div' );
 
-        const hiddenCard = createCardsImage( 'img/hidden-card.jpg' );
-        const visibleCard = createCardsImage( card.path );
+    const hiddenCard = createCardsImage( 'img/hidden-card.jpg' );
+    const visibleCard = createCardsImage( card.path );
 
-        createImagesContainer.append( hiddenCard, visibleCard );
+    createImagesContainer.append( hiddenCard );
 
-        addClass( createImagesContainer, CLASSES.CARDS_CONTAINER );
-        SELECTORS.CARDS_BOARD_CONTAINER.append( createImagesContainer );
+    addClass( createImagesContainer, CLASSES.CARDS_CONTAINER );
+    SELECTORS.CARDS_BOARD_CONTAINER.append( createImagesContainer );
 
-        card.hiddenTag = hiddenCard;
-        card.visibleTag = visibleCard;
-    } );
+    card.hiddenTag = hiddenCard;
+    card.visibleTag = visibleCard;
+  } );
 }
 
 function createCardsImage( src ) {
-    const createImageTag = document.createElement( 'img' );
-    src.includes( 'hidden' )
-        ? addClass( createImageTag, CLASSES.CARD_HIDDEN, CLASSES.CARD )
-        : addClass( createImageTag, CLASSES.CARD_VISIBLE, CLASSES.CARD );
-    createImageTag.src = src;
-    return createImageTag;
+  const createImageTag = document.createElement( 'img' );
+  src.includes( 'hidden' )
+    ? addClass( createImageTag, CLASSES.CARD_HIDDEN, CLASSES.CARD )
+    : addClass( createImageTag, CLASSES.CARD_VISIBLE, CLASSES.CARD );
+  createImageTag.src = src;
+  return createImageTag;
 }

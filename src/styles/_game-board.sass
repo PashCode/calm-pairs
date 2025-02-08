@@ -1,28 +1,37 @@
 .game-screen__game-board
-    display: flex
-    justify-content: center
-    align-items: center
-    flex-direction: column
-    row-gap: 25px
-    height: 90%
-    width: 50%
-    color: #b4b9b8
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  row-gap: 25px
+  height: 90%
+  width: 50%
+  color: #b4b9b8
 
 .result
-    display: flex
-    justify-content: space-evenly
-    padding: 0
-    margin: 0
-    list-style-type: none
-    width: 70%
+  display: flex
+  justify-content: space-evenly
+  padding: 0
+  margin: 0
+  list-style-type: none
+  width: 70%
 
 .cards-board
-    width: 100%
-    height: 100%
-    background-color: #b4b9b8
-    display: flex
-    flex-wrap: wrap
+  //position: relative
+  //display: flex
+  //flex-direction: column
+  //flex-wrap: wrap
+  //gap: 10rem
+  width: 100%
+  height: 100%
+  background-color: #b4b9b8
 
-//.card-hidden
-//    position: absolute
-//    cursor: pointer
+.card-hidden
+  //position: absolute
+  cursor: pointer
+
+.clicked
+  border: 5px solid grey
+
+.matched
+  border: 5px solid green
