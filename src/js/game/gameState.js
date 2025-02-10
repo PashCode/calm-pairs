@@ -12,13 +12,17 @@ export const GAME_CONFIG = {
     hard: [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15' ],
   },
   FLIP_DELAY: 400,
+  LOADING_DURATION: 1100,
 };
 
 export const SELECTORS = {
   LOAD_SCREEN: document.querySelector( '.game-screen__loading' ),
-  ALL_BUTTONS_CONTAINER: document.querySelector( '.game-screen__choice-level' ),
+  CHOICE_LEVEL_CONTAINER: document.querySelector( '.game-screen__choice-level' ),
   CARDS_BOARD_CONTAINER: document.querySelector( '.game-screen__game-board .cards-board' ),
+  RESTART_LEVEL_BUTTON: document.querySelector( '.buttons_restart-level' ),
+  ANOTHER_LEVEL_BUTTON: document.querySelector( '.buttons_another-level' ),
 };
+
 
 export const CLASSES = {
   CARD: 'card',
@@ -30,5 +34,4 @@ export const CLASSES = {
   CARDS_CONTAINER: 'cards-container',
   CLICKED: 'clicked',
   MATCHED: 'matched',
-  OPACITY: 'opacity',
 };

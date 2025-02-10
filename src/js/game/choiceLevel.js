@@ -5,13 +5,13 @@ import { shuffleCards } from '../utils/shuffleCards.js';
 import { renderCards } from './renderCards.js';
 
 export function choiceLevel() {
-  SELECTORS.ALL_BUTTONS_CONTAINER.childNodes.forEach( ( card ) => {
+  SELECTORS.CHOICE_LEVEL_CONTAINER.childNodes.forEach( ( card ) => {
     card.addEventListener( 'click', ( event ) => {
       const level = event.target.dataset.level;
       addCardIdAndPath( GAME_CONFIG.QUANTITY_CARDS[ level ] );
       shuffleCards( GAME_STATE.gameElements );
       renderCards();
-      classUtils.addClass( SELECTORS.ALL_BUTTONS_CONTAINER, CLASSES.ELEMENT_HIDDEN );
+      classUtils.addClass( SELECTORS.CHOICE_LEVEL_CONTAINER, CLASSES.ELEMENT_HIDDEN );
     } );
   } );
 }

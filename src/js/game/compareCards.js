@@ -2,12 +2,15 @@ import { CLASSES, GAME_CONFIG, GAME_STATE, SELECTORS } from './gameState.js';
 import { classUtils, elementUtils } from '../utils/domUtils.js';
 import { choiceLevel } from './choiceLevel.js';
 
+const { CARD_HIDDEN, ELEMENT_HIDDEN, CLICKED, MATCHED, NO_INTERACTION } = CLASSES;
+
 choiceLevel();
 
 export function compareCards() {
+
   SELECTORS.CARDS_BOARD_CONTAINER.addEventListener( 'click', ( event ) => {
     const clickedContainer = event.target.closest( '.cards-container' );
-    if ( !event.target.classList.contains( CLASSES.CARD_HIDDEN ) ) return;
+    if ( !event.target.classList.contains( CARD_HIDDEN ) ) return;
 
     firstClickOnCard( event.target, clickedContainer );
     secondClickOnCard();
@@ -18,9 +21,9 @@ export function compareCards() {
     GAME_STATE.gameElements.forEach( ( card ) => {
       if ( targetEvent === card.hiddenTag ) {
         GAME_STATE.activeChoice.push( card.id );
-        classUtils.addClass( targetEvent, CLASSES.CLICKED, CLASSES.ELEMENT_HIDDEN );
-        classUtils.addClass( card.visibleTag, CLASSES.NO_INTERACTION );
-        elementUtils.addElement( clickedContainer, card.visibleTag );
+        classUtils.addClass( targetEvent, CLICKED, ELEMENT_HIDDEN );
+        classUtils.addClass( card.visibleTag, NO_INTERACTION );
+        elementUtils.appendElement( clickedContainer, card.visibleTag );
       }
     } );
   }
@@ -33,14 +36,14 @@ export function compareCards() {
     const isMatched = firstId === secondId;
 
     GAME_STATE.gameElements.forEach( ( card ) => {
-      classUtils.addClass( card.hiddenTag, CLASSES.NO_INTERACTION );
+      classUtils.addClass( card.hiddenTag, NO_INTERACTION );
 
       if ( isMatched ) {
-        classUtils.replaceClass( card.hiddenTag, CLASSES.CLICKED, CLASSES.MATCHED );
-        classUtils.removeClass( card.hiddenTag, CLASSES.NO_INTERACTION );
-      } else if ( !card.hiddenTag.classList.contains( CLASSES.MATCHED ) ) {
+        classUtils.replaceClass( card.hiddenTag, CLICKED, MATCHED );
+        classUtils.removeClass( card.hiddenTag, NO_INTERACTION );
+      } else if ( !card.hiddenTag.classList.contains( MATCHED ) ) {
         setTimeout( () => {
-          classUtils.removeClass( card.hiddenTag, CLASSES.ELEMENT_HIDDEN, CLASSES.CLICKED, CLASSES.NO_INTERACTION );
+          classUtils.removeClass( card.hiddenTag, ELEMENT_HIDDEN, CLICKED, NO_INTERACTION );
           elementUtils.removeElement( card.visibleTag );
         }, GAME_CONFIG.FLIP_DELAY );
       }

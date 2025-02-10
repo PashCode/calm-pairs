@@ -7,7 +7,9 @@ export const classUtils = {
 };
 
 export const elementUtils = {
-  addElement: ( parentElement, element ) => parentElement.append( element ),
+  appendElement: ( parentElement, element ) => parentElement.append( element ),
   removeElement: ( element ) => element.remove(),
+  clearContainer: (element) => element.innerHTML = '',
+  clearGameElements: () => GAME_STATE.gameElements = [],
   clearActiveChoice: () => GAME_STATE.activeChoice = [],
 };
