@@ -1,41 +1,46 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script defer type="module" src="src/main.js"></script>
-    <link rel="stylesheet" href="src/style.css">
-    <title>neon-pairs</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=block" rel="stylesheet">
+
+  <script defer type="module" src="src/main.js"></script>
+  <link rel="stylesheet" href="src/style.css">
+  <title>neon-pairs</title>
 </head>
 <body>
 <div class="game">
-    <div class="game-screen">
-        <div class="game-screen__loading"></div>
-        <div class="game-screen__start-game"></div>
-
-        <div class="game-screen__choice-level">
-            <button data-level="easy" class="level-button">EASY</button>
-            <button data-level="basic" class="level-button">BASIC</button>
-            <button data-level="medium" class="level-button">MEDIUM</button>
-            <button data-level="hard" class="level-button">HARD</button>
-        </div>
-
-        <div class="game-screen__game-board">
-            <ul class="result">
-                <li class="result__mistakes">Mistakes:...</li>
-                <li class="result_timer">00:00:00</li>
-            </ul>
-
-            <div class="cards-board"></div>
-
-            <div class="buttons">
-                <button>Start new game</button>
-            </div>
-        </div>
-
-        <div class="game-screen__scoreboard"></div>
+  <div class="game-screen">
+    <div class="game-screen__loading">
+      <div class="loader"></div>
     </div>
+    <div class="game-screen__choice-level">
+      <button data-level="easy" class="level-button">EASY</button>
+      <button data-level="basic" class="level-button">BASIC</button>
+      <button data-level="medium" class="level-button">MEDIUM</button>
+      <button data-level="hard" class="level-button">HARD</button>
+    </div>
+
+    <div class="game-screen__game-board">
+      <ul class="result">
+        <li class="result__mistakes">Mistakes:...</li>
+        <li class="result_timer">00:00:00</li>
+      </ul>
+
+      <div class="cards-board"></div>
+
+      <div class="buttons">
+        <button>Start new game</button>
+      </div>
+    </div>
+
+    <div class="game-screen__scoreboard"></div>
+  </div>
 </div>
 </body>
 </html>
