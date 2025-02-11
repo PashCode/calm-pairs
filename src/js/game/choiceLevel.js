@@ -1,9 +1,9 @@
 import { CLASSES, GAME_CONFIG, GAME_STATE, SELECTORS } from './gameState.js';
 import { classUtils } from '../utils/domUtils.js';
-import { addCardIdAndPath } from './preloadElements/cardIdAndPath.js';
+import { addCardIdAndPath } from './preload/cardIdAndPath.js';
 import { shuffleCards } from '../utils/shuffleCards.js';
 import { renderCards } from './renderCards.js';
-import { updateTimerDisplay } from './startTimer.js';
+import { updateTimerDisplay } from './score/updateTimerDisplay.js';
 
 export function choiceLevel() {
   SELECTORS.CHOICE_LEVEL_CONTAINER.childNodes.forEach( ( levelButton ) => {

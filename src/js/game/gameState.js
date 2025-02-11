@@ -1,7 +1,12 @@
 export const GAME_STATE = {
   gameElements: [],
+  selectedCards: [],
+  mismatch_cards: 0,
   STORAGE_KEY: 'playerScoreboard',
-  activeChoice: [],
+  TIMER: {
+    TIMER_ID: 0, TIMER_TICK_INTERVAL: 1000,
+    minutes: 0, seconds: 0, final_time: 0,
+  },
 };
 
 export const GAME_CONFIG = {
@@ -13,20 +18,14 @@ export const GAME_CONFIG = {
   },
   FLIP_DELAY: 400,
   LOADING_DURATION: 1100,
-  TIMER: {
-    TIMER_ID: 0,
-    minutes: 0,
-    seconds: 0,
-    final_time: 0,
-  },
-  MISTAKES: 0
 };
 
 export const SELECTORS = {
   LOAD_SCREEN: document.querySelector( '.game-screen__loading' ),
   CHOICE_LEVEL_CONTAINER: document.querySelector( '.game-screen__choice-level' ),
-  CARDS_BOARD_CONTAINER: document.querySelector( '.game-screen__game-board .cards-board' ),
-  GAME_TIMER: document.querySelector( '.game-screen__game-board .result_timer' ),
+  CARDS_BOARD_CONTAINER: document.querySelector( '.cards-board' ),
+  GAME_TIMER: document.querySelector( '.result_timer .counter' ),
+  GAME_MISTAKES: document.querySelector( '.result__mistakes .counter' ),
   RESTART_LEVEL_BUTTON: document.querySelector( '.buttons_restart-level' ),
   ANOTHER_LEVEL_BUTTON: document.querySelector( '.buttons_another-level' ),
 };
@@ -36,10 +35,10 @@ export const CLASSES = {
   CARD: 'card',
   CARD_VISIBLE: 'card-visible',
   CARD_HIDDEN: 'card-hidden',
-  ELEMENT_VISIBLE: 'element-visible',
-  ELEMENT_HIDDEN: 'element-hidden',
-  NO_INTERACTION: 'no-interaction',
   CARDS_CONTAINER: 'cards-container',
   CLICKED: 'clicked',
   MATCHED: 'matched',
+  ELEMENT_VISIBLE: 'element-visible',
+  ELEMENT_HIDDEN: 'element-hidden',
+  NO_INTERACTION: 'no-interaction',
 };

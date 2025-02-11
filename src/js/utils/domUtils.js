@@ -11,5 +11,5 @@ export const elementUtils = {
   removeElement: ( element ) => element.remove(),
   clearContainer: (element) => element.innerHTML = '',
   clearGameElements: () => GAME_STATE.gameElements = [],
-  clearActiveChoice: () => GAME_STATE.activeChoice = [],
+  clearActiveChoice: () => GAME_STATE.selectedCards = [],
 };

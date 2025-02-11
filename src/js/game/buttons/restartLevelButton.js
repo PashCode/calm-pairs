@@ -1,6 +1,6 @@
-import { CLASSES, GAME_STATE, SELECTORS } from './gameState.js';
-import { shuffleCards } from '../utils/shuffleCards.js';
-import { classUtils, elementUtils } from '../utils/domUtils.js';
+import { CLASSES, GAME_STATE, SELECTORS } from '../gameState.js';
+import { shuffleCards } from '../../utils/shuffleCards.js';
+import { classUtils, elementUtils } from '../../utils/domUtils.js';
 
 const { ELEMENT_HIDDEN, MATCHED, CLICKED, CARDS_CONTAINER } = CLASSES;
 

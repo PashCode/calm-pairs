@@ -1,10 +1,10 @@
-import { preloadImages } from './js/game/preloadElements/preloadImages.js';
+import { preloadImages } from './js/game/preload/preloadImages.js';
 import { compareCards } from './js/game/compareCards.js';
 import { GAME_CONFIG, SELECTORS } from './js/game/gameState.js';
 import { classUtils, elementUtils } from './js/utils/domUtils.js';
-import { anotherLevelButton } from './js/game/anotherLevelButton.js';
-import { restartLevelButton } from './js/game/restartLevelButton.js';
-import { matchedCards } from './js/game/matchedCards.js';
+import { anotherLevelButton } from './js/game/buttons/anotherLevelButton.js';
+import { restartLevelButton } from './js/game/buttons/restartLevelButton.js';
+import { levelFinished } from './js/game/levelFinished.js';
 
 
 window.addEventListener( 'load', () => {
@@ -17,7 +17,7 @@ window.addEventListener( 'load', () => {
 compareCards();
 anotherLevelButton();
 restartLevelButton();
-matchedCards();
+levelFinished();
 
 
 

@@ -1,5 +1,5 @@
-import { CLASSES, SELECTORS } from './gameState.js';
-import { classUtils, elementUtils } from '../utils/domUtils.js';
+import { CLASSES, SELECTORS } from '../gameState.js';
+import { classUtils, elementUtils } from '../../utils/domUtils.js';
 
 export function anotherLevelButton() {
   SELECTORS.ANOTHER_LEVEL_BUTTON.addEventListener( 'click', () => {

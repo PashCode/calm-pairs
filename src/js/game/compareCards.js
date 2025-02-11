@@ -1,6 +1,7 @@
 import { CLASSES, GAME_CONFIG, GAME_STATE, SELECTORS } from './gameState.js';
 import { classUtils, elementUtils } from '../utils/domUtils.js';
 import { choiceLevel } from './choiceLevel.js';
+import { mismatchCounter } from './score/mismatchCounter.js';
 
 const { CARD_HIDDEN, ELEMENT_HIDDEN, CLICKED, MATCHED, NO_INTERACTION } = CLASSES;
 
@@ -20,7 +21,7 @@ export function compareCards() {
   function firstClickOnCard( targetEvent, clickedContainer ) {
     GAME_STATE.gameElements.forEach( ( card ) => {
       if ( targetEvent === card.hiddenTag ) {
-        GAME_STATE.activeChoice.push( card.id );
+        GAME_STATE.selectedCards.push( card.id );
         classUtils.addClass( targetEvent, CLICKED, ELEMENT_HIDDEN );
         classUtils.addClass( card.visibleTag, NO_INTERACTION );
         elementUtils.appendElement( clickedContainer, card.visibleTag );
@@ -31,10 +32,15 @@ export function compareCards() {
   // ---------------------------------
 
   function secondClickOnCard() {
-    if ( GAME_STATE.activeChoice.length !== 2 ) return;
-    const [ firstId, secondId ] = GAME_STATE.activeChoice;
+    if ( GAME_STATE.selectedCards.length !== 2 ) return;
+    const [ firstId, secondId ] = GAME_STATE.selectedCards;
     const isMatched = firstId === secondId;
-    if(!isMatched) GAME_CONFIG.MISTAKES++
+
+    // !!!!!!!!
+    if ( !isMatched ) {
+      GAME_STATE.mismatch_cards++;
+      mismatchCounter()
+    }
 
     GAME_STATE.gameElements.forEach( ( card ) => {
       classUtils.addClass( card.hiddenTag, NO_INTERACTION );
