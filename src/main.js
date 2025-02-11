@@ -4,6 +4,8 @@ import { GAME_CONFIG, SELECTORS } from './js/game/gameState.js';
 import { classUtils, elementUtils } from './js/utils/domUtils.js';
 import { anotherLevelButton } from './js/game/anotherLevelButton.js';
 import { restartLevelButton } from './js/game/restartLevelButton.js';
+import { matchedCards } from './js/game/matchedCards.js';
+
 
 window.addEventListener( 'load', () => {
   preloadImages().then( () => {
@@ -13,6 +15,15 @@ window.addEventListener( 'load', () => {
 } );
 
 compareCards();
-anotherLevelButton()
-restartLevelButton()
+anotherLevelButton();
+restartLevelButton();
+matchedCards();
+
+
+
+
+
+
+
+
 

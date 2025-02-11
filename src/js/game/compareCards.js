@@ -34,6 +34,7 @@ export function compareCards() {
     if ( GAME_STATE.activeChoice.length !== 2 ) return;
     const [ firstId, secondId ] = GAME_STATE.activeChoice;
     const isMatched = firstId === secondId;
+    if(!isMatched) GAME_CONFIG.MISTAKES++
 
     GAME_STATE.gameElements.forEach( ( card ) => {
       classUtils.addClass( card.hiddenTag, NO_INTERACTION );

@@ -7,6 +7,7 @@ const { ELEMENT_HIDDEN, MATCHED, CLICKED, CARDS_CONTAINER } = CLASSES;
 export function restartLevelButton() {
 
   SELECTORS.RESTART_LEVEL_BUTTON.addEventListener( 'click', () => {
+
     elementUtils.clearActiveChoice();
     elementUtils.clearContainer( SELECTORS.CARDS_BOARD_CONTAINER );
 
@@ -17,6 +18,9 @@ export function restartLevelButton() {
       classUtils.addClass( createImagesContainer, CARDS_CONTAINER );
 
       SELECTORS.CARDS_BOARD_CONTAINER.append( createImagesContainer );
+
+
+     !!!!! // SELECTORS.GAME_TIMER.textContent = '00:00'
 
       setTimeout( () =>
         elementUtils.appendElement( createImagesContainer, card.hiddenTag ), 500 );
