@@ -2,7 +2,6 @@ export const GAME_STATE = {
   gameElements: [],
   selectedCards: [],
   mismatch_cards: 0,
-  STORAGE_KEY: 'playerScoreboard',
   TIMER: {
     TIMER_ID: 0, TIMER_TICK_INTERVAL: 1000,
     minutes: 0, seconds: 0, final_time: 0,
@@ -18,6 +17,7 @@ export const GAME_CONFIG = {
   },
   FLIP_DELAY: 400,
   LOADING_DURATION: 1100,
+  STORAGE_KEY: 'playerScoreboard',
 };
 
 export const SELECTORS = {
