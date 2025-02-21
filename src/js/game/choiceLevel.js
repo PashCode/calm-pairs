@@ -8,8 +8,8 @@ import { updateTimerDisplay } from './score/updateTimerDisplay.js';
 export function choiceLevel() {
   SELECTORS.CHOICE_LEVEL_CONTAINER.childNodes.forEach( ( levelButton ) => {
     levelButton.addEventListener( 'click', ( event ) => {
-      const LEVEL = event.target.dataset.level.toUpperCase();
-      addCardIdAndPath( GAME_CONFIG.QUANTITY_CARDS[ LEVEL ] );
+      GAME_STATE.chooseLevel = event.target.dataset.level.toUpperCase();
+      addCardIdAndPath( GAME_CONFIG.QUANTITY_CARDS[ GAME_STATE.chooseLevel ] );
       shuffleCards( GAME_STATE.gameElements );
       renderCards();
       updateTimerDisplay()

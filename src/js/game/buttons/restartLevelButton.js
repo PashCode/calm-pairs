@@ -1,6 +1,8 @@
 import { CLASSES, GAME_STATE, SELECTORS } from '../gameState.js';
 import { shuffleCards } from '../../utils/shuffleCards.js';
 import { classUtils, elementUtils } from '../../utils/domUtils.js';
+import { clearGameScore } from '../score/clearGameScore.js';
+import { updateTimerDisplay } from '../score/updateTimerDisplay.js';
 
 const { ELEMENT_HIDDEN, MATCHED, CLICKED, CARDS_CONTAINER } = CLASSES;
 
@@ -19,8 +21,8 @@ export function restartLevelButton() {
 
       SELECTORS.CARDS_BOARD_CONTAINER.append( createImagesContainer );
 
-
-     !!!!! // SELECTORS.GAME_TIMER.textContent = '00:00'
+      clearGameScore()
+      updateTimerDisplay()
 
       setTimeout( () =>
         elementUtils.appendElement( createImagesContainer, card.hiddenTag ), 500 );

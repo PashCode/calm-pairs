@@ -1,26 +1,34 @@
-.game-screen__loading
+@use 'animations'
+
+.loading-screen
   position: absolute
+  width: inherit
+  height: inherit
+  display: flex
+  //display: none
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  row-gap: 30px
+  font-size: 50px
+  background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%)
+  //animation: opacity 3s linear infinite
+
+.flipping
   display: flex
   justify-content: center
   align-items: center
   width: 100%
-  height: 100%
-  background-color: #010112
-  border-radius: 2rem
-  box-shadow: inset 0 0 18rem black, inset 0 0 3rem black, 0 0 10rem black
-  color: #b4b9b8
-  z-index: 100
+  column-gap: 30px
 
-.loader
-  width: 120px
-  height: 20px
-  mask: linear-gradient(90deg, #000 70%, transparent 0) left/20% 100%
-  background: linear-gradient(to right, #000 0%, #000 100%) left -25% top 0 / 20% 100% no-repeat, #ddd
-  animation: l7 1s infinite steps(6)
+.flipping div
+  width: 50px
+  height: 50px
+  background-color: #000000
+  border-radius: 10px
+  opacity: 0
 
-@keyframes l7
-  100%
-    background-position: right -25% top 0
-
-
-
+@for $i from 1 through 6
+  .flipping div:nth-of-type(#{$i})
+    $delay: 0.25 * $i
+    animation: opacity 1.5s $delay * 1s infinite ease

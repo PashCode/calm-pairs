@@ -11,7 +11,8 @@ export function renderCards() {
     const hiddenCard = createCardsImage( 'img/hidden-card.jpg' );
     const visibleCard = createCardsImage( card.path );
 
-    elementUtils.appendElement( createImagesContainer, hiddenCard );
+    hiddenCard.title = card.id
+    elementUtils.appendElement( createImagesContainer, hiddenCard);
 
     classUtils.addClass( createImagesContainer, CARDS_CONTAINER );
     elementUtils.appendElement( SELECTORS.CARDS_BOARD_CONTAINER, createImagesContainer );

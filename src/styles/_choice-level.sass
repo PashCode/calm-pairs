@@ -1,17 +1,29 @@
-.game-screen__choice-level
+.choice-level
   position: absolute
-  width: 100%
-  height: 100%
   display: flex
-  justify-content: center
-  align-items: center
+  /*justify-content: center*/
+  /*align-items: center*/
   flex-direction: column
-  row-gap: 30px
-  border-radius: 2rem
-  background: #43488f
-  box-shadow: inset 0 0 18rem black, inset 0 0 3rem black, 0 0 10rem black
+  gap: 30px
+  z-index: 100
 
-  .level-button
-    width: 150px
-    height: 50px
-    cursor: pointer
+
+.choice-level__button
+  width: 200px
+  height: 60px
+  border-radius: 20px
+  padding: 10px 20px
+  font-size: 25px
+  border: none
+  cursor: pointer
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset
+
+.clicked
+  transform: translateY(1px)
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px
+  transition: .1s
+
+.choice-level-width
+  width: min(50vw, 80vh)
+  height: min(50vw, 80vh)
+  aspect-ratio: 1 / 1

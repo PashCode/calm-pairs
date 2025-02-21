@@ -1,5 +1,6 @@
 import { CLASSES, SELECTORS } from '../gameState.js';
 import { classUtils, elementUtils } from '../../utils/domUtils.js';
+import { clearGameScore } from '../score/clearGameScore.js';
 
 export function anotherLevelButton() {
   SELECTORS.ANOTHER_LEVEL_BUTTON.addEventListener( 'click', () => {
@@ -7,5 +8,6 @@ export function anotherLevelButton() {
     elementUtils.clearActiveChoice();
     elementUtils.clearContainer( SELECTORS.CARDS_BOARD_CONTAINER );
     classUtils.removeClass( SELECTORS.CHOICE_LEVEL_CONTAINER, CLASSES.ELEMENT_HIDDEN );
+    clearGameScore()
   } );
 }

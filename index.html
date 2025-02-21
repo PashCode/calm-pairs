@@ -7,45 +7,107 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=block" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100..900&display=block" rel="stylesheet">
 
   <script defer type="module" src="src/main.js"></script>
   <link rel="stylesheet" href="src/style.css">
   <title>neon-pairs</title>
 </head>
+
 <body>
-<div class="game">
-  <div class="game-screen">
-    <div class="game-screen__loading">
-      <div class="loader"></div>
+<div class="background"></div>
+
+<div class="game-container">
+  <div class="board"></div>
+
+  <div class="loading-screen">
+    <p class="loading-screen__text">loading calmness…</p>
+    <div class="flipping">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-    <div class="game-screen__choice-level">
-      <button data-level="easy" class="level-button">EASY</button>
-      <button data-level="basic" class="level-button">BASIC</button>
-      <button data-level="medium" class="level-button">MEDIUM</button>
-      <button data-level="hard" class="level-button">HARD</button>
+  </div>
+  <!----------------------------------------------->
+
+  <div class="choice-level">
+    <p style="text-align: center">choise level</p>
+    <button data-level="easy" class="choice-level__button">easy</button>
+    <button data-level="basic" class="choice-level__button">basic</button>
+    <button data-level="medium" class="choice-level__button">medium</button>
+    <button data-level="hard" class="choice-level__button">hard</button>
+  </div>
+  <!----------------------------------------------->
+  <div class="active-game">
+    <div class="active-game__timer">00:00</div>
+    <div class="card-board">
+      <div class="card-board__item"></div>
+      <div class="card-board__item"></div>
+      <div class="card-board__item"></div>
+      <div class="card-board__item"></div>
+      <div class="card-board__item"></div>
+      <div class="card-board__item"></div>
+      <div class="card-board__item"></div>
+      <div class="card-board__item"></div>
+      <div class="card-board__item"></div>
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
+      <!--    <div class="card-board__item"></div>-->
     </div>
+    <div class="active-game__results">mistakes: 12</div>
 
-    <div class="game-screen__game-board">
-      <ul class="result">
-        <li class="result__mistakes">Mistakes:
-          <span class="counter">0</span>
-        </li>
-        <li class="result_timer">
-          <span class="counter">00:00</span>
-        </li>
-      </ul>
+  </div>
+  <!----------------------------------------------->
+  <div class="results">
+    <h1 class="results__title">your results</h1>
+    <hr>
 
-      <div class="cards-board"></div>
+    <div class="results__counters">
+      <div class="result-time">
+        <h1 class="result-time__title">your time</h1>
+        <p class="results__counters__previous">previous: 00:00</p>
+        <p class="results__counters__current">current: 00:00</p>
+      </div>
 
-      <div class="buttons">
-        <button class="buttons_another-level">Choice another level</button>
-        <button class="buttons_restart-level">Restart</button>
+      <div class="result-mistakes">
+        <h1 class="result-mistakes__title">your mistakes</h1>
+        <p class="result-mistakes__previous">previous: 12</p>
+        <p class="result-mistakes__current">current: 10</p>
       </div>
     </div>
 
-    <div class="game-screen__scoreboard"></div>
+    <hr>
+    <h1 class="results__record">in this game you dont have a new record by time or mistakes</h1>
+
   </div>
+  <!----------------------------------------------->
 </div>
 </body>
 </html>

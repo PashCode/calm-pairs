@@ -1,6 +1,9 @@
 import { CLASSES, GAME_STATE, SELECTORS } from './gameState.js';
 import { resultHandler } from './resultHandler.js';
-import { stopAndSaveTime } from './score/stopAndSaveTime.js';
+import { clearGameScore } from './score/clearGameScore.js';
+import { setFinalTime } from './score/setFinalTime.js';
+import { resultsScreen } from './score/resultsScreen.js';
+import { classUtils } from '../utils/domUtils.js';
 
 export function checkAllCardsMatched() {
   SELECTORS.CARDS_BOARD_CONTAINER.addEventListener( 'click', ( event ) => {
@@ -10,10 +13,12 @@ export function checkAllCardsMatched() {
       } );
 
       if ( allCardsMatched ) {
-        stopAndSaveTime();
+        classUtils.addClass(SELECTORS.GAME_BOARD_CONTAINER, CLASSES.ELEMENT_HIDDEN)
+        classUtils.removeClass(SELECTORS.SCOREBOARD_SCREEN, CLASSES.ELEMENT_HIDDEN)
+        setFinalTime();
+        resultsScreen()
         resultHandler();
-
-        console.log( 2 );
+        clearGameScore(); // сделать єто после клика на кнопку новой игры на финальном экране или после задержки, когда финальный экран отобразится
       }
     }
   } );
