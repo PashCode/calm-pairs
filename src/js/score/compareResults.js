@@ -59,72 +59,72 @@ export function compareResults() {
   if (timeDiff < 0 && mistakeDiff < 0) {
     updateScoreboard(
       statusMessages.betterBoth,
-      `time improved${breakLine()}by: ${timeFormatter(absTimeDiff)}`,
-      `mistakes reduced${breakLine()}by: ${absMistakeDiff}`
+      `time improved${breakLine()} by: ${timeFormatter(absTimeDiff)}`,
+      `mistakes reduced${breakLine()} by: ${absMistakeDiff}`
     );
   }
   // 2. Время лучше, но ошибок больше
   else if (timeDiff < 0 && mistakeDiff > 0) {
     updateScoreboard(
       statusMessages.betterTime,
-      `time improved${breakLine()}by: ${timeFormatter(absTimeDiff)}`,
-      `mistakes increased${breakLine()}by: ${absMistakeDiff}`
+      `time improved${breakLine()} by: ${timeFormatter(absTimeDiff)}`,
+      `mistakes increased${breakLine()} by: ${absMistakeDiff}`
     );
   }
   // 3. Время хуже, но ошибок меньше
   else if (timeDiff > 0 && mistakeDiff < 0) {
     updateScoreboard(
       statusMessages.fewerMistakes,
-      `time worse${breakLine()}by: ${timeFormatter(absTimeDiff)}`,
-      `mistakes reduced${breakLine()}by: ${absMistakeDiff}`
+      `time worse${breakLine()} by: ${timeFormatter(absTimeDiff)}`,
+      `mistakes reduced${breakLine()} by: ${absMistakeDiff}`
     );
   }
   // 4. Время хуже и ошибок больше
   else if (timeDiff > 0 && mistakeDiff > 0) {
     updateScoreboard(
       statusMessages.noRecord,
-      `time worse${breakLine()}by: ${timeFormatter(absTimeDiff)}`,
-      `mistakes increased${breakLine()}by: ${absMistakeDiff}`
+      `time worse${breakLine()} by: ${timeFormatter(absTimeDiff)}`,
+      `mistakes increased${breakLine()} by: ${absMistakeDiff}`
     );
   }
   // 5. Время такое же, но ошибок меньше
   else if (timeDiff === 0 && mistakeDiff < 0) {
     updateScoreboard(
       statusMessages.fewerMistakes,
-      `time is${breakLine()}unchanged`,
-      `mistakes reduced${breakLine()}by: ${absMistakeDiff}`
+      `time is${breakLine()} unchanged`,
+      `mistakes reduced${breakLine()} by: ${absMistakeDiff}`
     );
   }
   // 6. Время такое же, но ошибок больше
   else if (timeDiff === 0 && mistakeDiff > 0) {
     updateScoreboard(
       statusMessages.noRecord,
-      `time is${breakLine()}unchanged`,
-      `mistakes increased${breakLine()}by: ${absMistakeDiff}`
+      `time is${breakLine()} unchanged`,
+      `mistakes increased${breakLine()} by: ${absMistakeDiff}`
     );
   }
   // 7. Ошибок столько же, но время хуже
   else if (mistakeDiff === 0 && timeDiff > 0) {
     updateScoreboard(
       statusMessages.noRecord,
-      `time worse${breakLine()}by: ${timeFormatter(absTimeDiff)}`,
-      `mistakes are${breakLine()}unchanged`
+      `time worse${breakLine()} by: ${timeFormatter(absTimeDiff)}`,
+      `mistakes are${breakLine()} unchanged`
     );
   }
   // 8. Ошибок столько же, но время лучше
   else if (mistakeDiff === 0 && timeDiff < 0) {
     updateScoreboard(
       statusMessages.betterTime,
-      `time improved${breakLine()}by: ${timeFormatter(absTimeDiff)}`,
-      `mistakes are${breakLine()}unchanged`
+      `time improved${breakLine()} by: ${timeFormatter(absTimeDiff)}`,
+      `mistakes are${breakLine()} unchanged`
     );
   }
   // 9. Время и ошибки такие же, как и были
   else if (timeDiff === 0 && mistakeDiff === 0) {
     updateScoreboard(
       statusMessages.noRecord,
-      `time is${breakLine()}unchanged`,
-      `mistakes are${breakLine()}unchanged`
+      `time is${breakLine()} unchanged`,
+      `mistakes are${breakLine()} unchanged`
     );
   }
 }
