@@ -26,9 +26,9 @@ export const GAME_CONFIG = {
   LOADING_DURATION: 1500,
   STORAGE_KEY: 'playerScoreboard',
   MOBILE_SIZE_SCREEN: window.innerWidth <= 1024,
-  SOUND_CHOICE_LEVEL_CLICK: new Howl( { src: [ '/sounds/choice-level.aac' ] } ),
-  SOUND_CLICK_ON_CARD: new Howl( { src: [ '/sounds/click-card.aac' ] } ),
-  SOUND_MATCHED_CARDS: new Howl( { src: [ '/sounds/matched-cards.aac' ] } ),
+  SOUND_CHOICE_LEVEL_CLICK: new Howl( { src: [ '/calm-pairs/sounds/choice-level.aac' ] } ),
+  SOUND_CLICK_ON_CARD: new Howl( { src: [ '/calm-pairs/sounds/click-card.aac' ] } ),
+  SOUND_MATCHED_CARDS: new Howl( { src: [ '/calm-pairs/sounds/matched-cards.aac' ] } ),
 };
 
 export const SELECTORS = {
