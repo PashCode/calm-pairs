@@ -5,30 +5,51 @@
   width: inherit
   height: inherit
   display: flex
-  //display: none
   justify-content: center
   align-items: center
   flex-direction: column
-  row-gap: 30px
-  font-size: 50px
+  row-gap: 3rem
+  padding: 1.5rem
   background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%)
-  //animation: opacity 3s linear infinite
+  transition: 1.5s
+  z-index: 100
 
-.flipping
-  display: flex
-  justify-content: center
-  align-items: center
-  width: 100%
-  column-gap: 30px
+  &__text
+    font-size: 5rem
+    width: 100%
+    text-align: center
+    @media (max-width: 500px)
+      font-size: 4rem
+    @media (max-width: 400px)
+      font-size: 3.5rem
+    @media (max-width: 355px)
+      font-size: 3rem
 
-.flipping div
-  width: 50px
-  height: 50px
+  &__indicator
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    column-gap: 3rem
+    @media (max-width: 500px)
+      column-gap: 2rem
+    @media (max-width: 400px)
+      column-gap: 1.5rem
+
+.loading-screen__indicator div
+  width: 5rem
+  aspect-ratio: 1 / 1
   background-color: #000000
-  border-radius: 10px
+  border-radius: 1rem
   opacity: 0
+  @media (max-width: 500px)
+    width: 4rem
+  @media (max-width: 400px)
+    width: 3.5rem
+  @media (max-width: 355px)
+    width: 3rem
 
 @for $i from 1 through 6
-  .flipping div:nth-of-type(#{$i})
-    $delay: 0.25 * $i
-    animation: opacity 1.5s $delay * 1s infinite ease
+  .loading-screen__indicator div:nth-of-type(#{$i})
+    $delay: 0.2 * $i
+    animation: opacity 1.2s $delay * 1s infinite ease

@@ -1,0 +1,18 @@
+@use "utilities"
+
+.board
+  position: absolute
+  width: 45rem
+  height: 65rem
+  border-radius: 2rem
+  display: flex
+  justify-content: center
+  align-items: center
+  transition: 1s
+  background-image: utilities.$actionElementBackground
+  box-shadow: utilities.$elevatedShadow
+  z-index: 10
+  @media (max-height: 1150px)
+    height: 50rem
+  @media (max-width: 640px)
+    width: 80%

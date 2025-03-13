@@ -1,4 +1,4 @@
-import { GAME_STATE } from '../game/gameState.js';
+import { GAME_STATE } from '../gameState.js';
 
 export function timer() {
   return () => {

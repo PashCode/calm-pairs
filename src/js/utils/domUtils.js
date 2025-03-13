@@ -1,4 +1,4 @@
-import { GAME_STATE } from '../game/gameState.js';
+import { GAME_STATE, SELECTORS } from '../gameState.js';
 
 export const classUtils = {
   addClass: ( element, ...className ) => element.classList.add( ...className ),
@@ -9,7 +9,9 @@ export const classUtils = {
 export const elementUtils = {
   appendElement: ( parentElement, element ) => parentElement.append( element ),
   removeElement: ( element ) => element.remove(),
-  clearContainer: (element) => element.innerHTML = '',
+  clearCardsContainer: ( element ) => {
+    while ( element.length > 0 ) SELECTORS.CARDS_CONTAINER[ 0 ].remove();
+  },
   clearGameElements: () => GAME_STATE.gameElements = [],
   clearActiveChoice: () => GAME_STATE.selectedCards = [],
-};
+}

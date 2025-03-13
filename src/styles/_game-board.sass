@@ -1,39 +1,91 @@
-.game-screen__game-board
-  display: flex
-  justify-content: center
-  align-items: center
-  flex-direction: column
-  row-gap: 25px
-  height: 90%
-  width: 50%
-  color: #b4b9b8
-  background: grey
+@use "animations"
+@use "utilities"
 
-.result
-  display: flex
-  justify-content: space-evenly
-  padding: 0
-  margin: 0
-  list-style-type: none
-  width: 70%
+.expand-board-layout
+  display: grid
+  padding: 1.6% 2%
+  @media (max-width: 1024px)
+    transition-delay: .35s
 
-.cards-board
-  //position: relative
-  display: flex
-  //flex-direction: column
-  flex-wrap: wrap
-  //gap: 10rem
-  width: 100%
-  height: 100%
-  //background-color: #b4b9b8
+.expand-easy
+  grid-template-columns: repeat(4, 1fr)
+  grid-template-rows: repeat(3, 1fr)
+  width: min(50vw, 80vh * 1.333)
+  height: min(37.5vw, 80vh)
+  @media (max-width: 1024px)
+    grid-template-columns: repeat(3, 1fr)
+    grid-template-rows: repeat(4, 1fr)
+    width: min(85vw, 80vh * (3/4))
+    height: min(85vw * (4/3), 80vh)
+
+.expand-basic
+  grid-template-columns: repeat(4, 1fr)
+  grid-template-rows: repeat(4, 1fr)
+  width: min(50vw, 80vh)
+  height: min(50vw, 80vh)
+  @media (max-width: 1024px)
+    width: min(90vw, 80vh)
+    height: min(90vw, 80vh)
+
+.expand-medium
+  grid-template-columns: repeat(5, 1fr)
+  grid-template-rows: repeat(4, 1fr)
+  width: min(50vw, 80vh * 1.25)
+  height: min(40vw, 80vh)
+  @media (max-width: 1024px)
+    grid-template-columns: repeat(4, 1fr)
+    grid-template-rows: repeat(5, 1fr)
+    width: min(90vw, 80vh * (4/5))
+    height: min(90vw * (5/4), 80vh)
+
+.expand-hard
+  grid-template-columns: repeat(6, 1fr)
+  grid-template-rows: repeat(5, 1fr)
+  height: min(50vw, 86.67vh)
+  width: min(60vw, 100vh)
+  @media (max-width: 1024px)
+    grid-template-columns: repeat(5, 1fr)
+    grid-template-rows: repeat(6, 1fr)
+    width: min(90vw, 80vh * (5/6))
+    height: min(90vw * (6/5), 80vh)
+
+
+.cards-container
+  margin: .5rem .5rem .6rem .5rem
+  position: relative
+  display: grid
+  transition: opacity .7s
+  animation: opacity-reverse 1s
+  @media (max-width: 1025px)
+    transition-delay: .2s
+    margin: .3rem .3rem .4rem .3rem
+
+
+.card
+  cursor: pointer
 
 .card-hidden
-  //position: absolute
-  cursor: pointer
-  color: #43488f
+  position: absolute
+  width: 100%
+  border-radius: .9rem
+  justify-self: center
+  align-self: center
+  transition: .3s ease box-shadow
+  box-shadow: utilities.$cardHiddenShadow
+  z-index: 100
 
-.clicked
-  border: 5px solid grey
+.card-hidden:hover
+  box-shadow: utilities.$cardHiddenHoverShadow
 
-.matched
-  border: 5px solid green
+.card-visible
+  position: absolute
+  width: 100%
+  border-radius: .9rem
+  justify-self: center
+  align-self: center
+  z-index: 99
+
+
+
+
+

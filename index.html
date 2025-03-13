@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 viewport-fit=cover" >
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,18 +11,17 @@
 
   <script defer type="module" src="src/main.js"></script>
   <link rel="stylesheet" href="src/style.css">
-  <title>neon-pairs</title>
+  <title>Calm Pairs</title>
 </head>
 
 <body>
 <div class="background"></div>
 
 <div class="game-container">
-  <div class="board"></div>
 
   <div class="loading-screen">
     <p class="loading-screen__text">loading calmness…</p>
-    <div class="flipping">
+    <div class="loading-screen__indicator">
       <div></div>
       <div></div>
       <div></div>
@@ -31,83 +30,79 @@
       <div></div>
     </div>
   </div>
-  <!----------------------------------------------->
 
-  <div class="choice-level">
-    <p style="text-align: center">choise level</p>
-    <button data-level="easy" class="choice-level__button">easy</button>
-    <button data-level="basic" class="choice-level__button">basic</button>
-    <button data-level="medium" class="choice-level__button">medium</button>
-    <button data-level="hard" class="choice-level__button">hard</button>
-  </div>
-  <!----------------------------------------------->
-  <div class="active-game">
-    <div class="active-game__timer">00:00</div>
-    <div class="card-board">
-      <div class="card-board__item"></div>
-      <div class="card-board__item"></div>
-      <div class="card-board__item"></div>
-      <div class="card-board__item"></div>
-      <div class="card-board__item"></div>
-      <div class="card-board__item"></div>
-      <div class="card-board__item"></div>
-      <div class="card-board__item"></div>
-      <div class="card-board__item"></div>
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
-      <!--    <div class="card-board__item"></div>-->
+  <div class="board no-visible">
+
+    <div class="choice-level no-visible no-interaction">
+      <p class="choice-level__title">choose level</p>
+      <button data-level="easy" class="buttons buttons__choice-level ">easy</button>
+      <button data-level="basic" class="buttons buttons__choice-level ">basic</button>
+      <button data-level="medium" class="buttons buttons__choice-level ">medium</button>
+      <button data-level="hard" class="buttons buttons__choice-level ">hard</button>
     </div>
-    <div class="active-game__results">mistakes: 12</div>
 
-  </div>
-  <!----------------------------------------------->
-  <div class="results">
-    <h1 class="results__title">your results</h1>
-    <hr>
+    <div class="results element-hidden no-visible">
+      <h1 class="results__title">game summary</h1>
+      <hr>
+      <div class="results__indicators-wrapper">
+        <div class="results__counters-wrapper">
+          <div class="results-counters-board results-time">
+            <h1 class="results-counters-board__title">time</h1>
+            <div class="results-counters-board__values-wrapper time-wrapper">
+              <p class="results-counters-board__values">current:
+                <span class="results-counters-board__values_counter time-current-counter"></span>
+              </p>
+              <p class="results-counters-board__values time-previous">previous:
+                <span class=" results-counters-board__values_counter time-previous-counter"></span>
+              </p>
+            </div>
+            <hr class="results-counters-board__time-compare-line results-counters-board__compare-line">
+            <div class="results-counters-board__compare-wrapper time-compare-wrapper">
+              <p class="results-counters-board__compare">
+                <span class="results-counters-board__compare-count time-compare-count"></span>
+              </p>
+            </div>
+          </div>
 
-    <div class="results__counters">
-      <div class="result-time">
-        <h1 class="result-time__title">your time</h1>
-        <p class="results__counters__previous">previous: 00:00</p>
-        <p class="results__counters__current">current: 00:00</p>
+          <div class="results-counters-board results-mistakes">
+            <h1 class="results-counters-board__title">mistakes</h1>
+            <div class="results-counters-board__values-wrapper mistakes-wrapper">
+              <p class="results-counters-board__values">current:
+                <span class="results-counters-board__values_counter mistakes-current-counter"></span>
+              </p>
+              <p class="results-counters-board__values mistakes-previous">previous:
+                <span class="results-counters-board__values_counter mistakes-previous-counter"></span>
+              </p>
+            </div>
+            <hr class="results-counters-board__mistakes-compare-line results-counters-board__compare-line">
+            <div class="results-counters-board__compare-wrapper mistakes-compare-wrapper">
+              <p class="results-counters-board__compare">
+                <span class="results-counters-board__compare-count mistakes-compare-count"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <h1 class="results__status-message"></h1>
       </div>
-
-      <div class="result-mistakes">
-        <h1 class="result-mistakes__title">your mistakes</h1>
-        <p class="result-mistakes__previous">previous: 12</p>
-        <p class="result-mistakes__current">current: 10</p>
+      <hr>
+      <div class="results__button-container">
+      <button class="buttons buttons__new-game ">start new game</button>
       </div>
     </div>
-
-    <hr>
-    <h1 class="results__record">in this game you dont have a new record by time or mistakes</h1>
-
   </div>
-  <!----------------------------------------------->
-</div>
+
+  <div class="active-game element-hidden no-visible">
+    <div class="active-game__counters">
+      <div class="active-game__timer">time:&nbsp;<span class="time-counter">00:00</span></div>
+      <hr class="active-game__counters-line">
+      <div class="active-game__mistakes">mistakes:&nbsp;<span class="mistakes-counter">0</span></div>
+    </div>
+
+    <div class="active-game__buttons">
+      <button class="buttons buttons__active-game restart-level">restart level</button>
+      <button class="buttons buttons__active-game another-level">another level</button>
+    </div>
+  </div>
+  </div>
 </body>
 </html>

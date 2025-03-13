@@ -1,29 +1,16 @@
+@use "utilities"
+
 .choice-level
   position: absolute
+  width: 100%
+  height: 100%
   display: flex
-  /*justify-content: center*/
-  /*align-items: center*/
   flex-direction: column
-  gap: 30px
-  z-index: 100
+  justify-content: center
+  align-items: center
+  gap: 3rem
+  transition: 1s
+  z-index: 3
+  font-size: 1.6rem
 
 
-.choice-level__button
-  width: 200px
-  height: 60px
-  border-radius: 20px
-  padding: 10px 20px
-  font-size: 25px
-  border: none
-  cursor: pointer
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset
-
-.clicked
-  transform: translateY(1px)
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px
-  transition: .1s
-
-.choice-level-width
-  width: min(50vw, 80vh)
-  height: min(50vw, 80vh)
-  aspect-ratio: 1 / 1
