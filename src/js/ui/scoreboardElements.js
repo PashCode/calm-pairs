@@ -1,5 +1,5 @@
-import { CLASSES, SELECTORS } from '../gameState.js';
 import { classUtils } from '../utils/domUtils.js';
+import { CLASSES, SELECTORS } from '../gameState.js';
 
 export function scoreboardElements( method ) {
   [ SELECTORS.SCOREBOARD_TIME_COMPARE_LINE,

@@ -1,6 +1,6 @@
+import { timeout } from '../utils/timeout.js';
 import { classUtils } from '../utils/domUtils.js';
 import { CLASSES, GAME_STATE, SELECTORS } from '../gameState.js';
-import { timeout } from '../utils/timeout.js';
 
 export const UI_LEVEL_BUTTONS = {
   levelButtonsRemoveNoClick: ( delay ) => {

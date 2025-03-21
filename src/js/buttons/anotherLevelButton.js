@@ -1,18 +1,17 @@
-import { elementUtils } from '../utils/domUtils.js';
-import { UI_ALL_BUTTONS } from '../ui/uiActions.js';
 import { clearGameScore } from '../score/clearGameScore.js';
-import { clickAnotherLevelButtonUI } from '../ui/anotherLevel.js';
+import { clickHandleLevelButtonUI } from '../ui/anotherLevel.js';
+import { UIButtonClick } from '../ui/buttonClick.js';
+import { elementUtils } from '../utils/domUtils.js';
 
-export function anotherLevelButton( button ) {
+export function handleLevelClick( button ) {
   button.addEventListener( 'click', () => {
-    clickAnotherLevelButtonUI();
+    clickHandleLevelButtonUI();
 
     elementUtils.clearGameElements();
     elementUtils.clearActiveChoice();
 
-    UI_ALL_BUTTONS.buttonDown( button );
-    UI_ALL_BUTTONS.buttonUp( 200, button );
-    
+    UIButtonClick( 200, button );
+
     clearGameScore();
   } );
 }

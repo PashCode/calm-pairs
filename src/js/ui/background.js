@@ -13,6 +13,7 @@ class Particle {
   }
 
   reset() {
+    // Ініціалізуємо частинку в випадковій позиції з випадковим розміром і швидкістю
     this.x = Math.random() * window.innerWidth;
     this.y = Math.random() * window.innerHeight;
     this.size = sizeParticles();
@@ -26,27 +27,28 @@ class Particle {
     this.x += this.speedX;
     this.y += this.speedY;
 
-    // Плавное появление и исчезновение
+    // Плавно зʼявляється та зникає
     if ( this.opacity < 0.7 ) this.opacity += 0.01;
 
-    // Проверка границ экрана
+    // Перевірка меж екрана, якщо частинка вийшла за межі, скидаємо її
     if ( this.x < -this.size || this.x > window.innerWidth ||
       this.y < -this.size || this.y > window.innerHeight ) {
       this.reset();
     }
 
+    // Задаємо нову позицію і прозорість частинки
     this.element.style.transform = `translate(${ this.x }px, ${ this.y }px)`;
     this.element.style.opacity = this.opacity;
   }
 }
 
-// Создаем пул частиц
+// Створюємо пул частинок
 for ( let i = 0; i < MAX_PARTICLES; i++ ) {
   particles.push( new Particle() );
 }
 
-// Используем requestAnimationFrame для оптимизированной анимации
+// Використовуємо requestAnimationFrame для оптимізованої анімації
 export function backgroundStart() {
-  particles.forEach( particle => particle.update() );
+  particles.forEach( ( particle ) => particle.update() );
   requestAnimationFrame( backgroundStart );
 }

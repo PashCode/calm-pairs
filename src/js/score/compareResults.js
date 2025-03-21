@@ -45,17 +45,17 @@ export function compareResults() {
     return GAME_CONFIG.MOBILE_SIZE_SCREEN ? '<br>' : ''
   }
 
-  // Новый игрок
+  // Новий гравець
   if (firstGame) {
     updateScoreboard(statusMessages.newPlayer);
     scoreboardElements('addClass');
     return;
   }
 
-  // Показываем блок сравнения для остальных случаев
+  // Показуємо блок порівняння для нових та не нових гравців
   scoreboardElements('removeClass');
 
-  // 1. Время лучше и ошибок меньше
+  // 1. Час кращий і помилок менше
   if (timeDiff < 0 && mistakeDiff < 0) {
     updateScoreboard(
       statusMessages.betterBoth,
@@ -63,7 +63,7 @@ export function compareResults() {
       `mistakes reduced${breakLine()} by: ${absMistakeDiff}`
     );
   }
-  // 2. Время лучше, но ошибок больше
+  // 2. Час кращий, але помилок більше
   else if (timeDiff < 0 && mistakeDiff > 0) {
     updateScoreboard(
       statusMessages.betterTime,
@@ -71,7 +71,7 @@ export function compareResults() {
       `mistakes increased${breakLine()} by: ${absMistakeDiff}`
     );
   }
-  // 3. Время хуже, но ошибок меньше
+  // 3. Час гірший, але помилок менше
   else if (timeDiff > 0 && mistakeDiff < 0) {
     updateScoreboard(
       statusMessages.fewerMistakes,
@@ -79,7 +79,7 @@ export function compareResults() {
       `mistakes reduced${breakLine()} by: ${absMistakeDiff}`
     );
   }
-  // 4. Время хуже и ошибок больше
+  // 4. Час гірший і помилок більше
   else if (timeDiff > 0 && mistakeDiff > 0) {
     updateScoreboard(
       statusMessages.noRecord,
@@ -87,7 +87,7 @@ export function compareResults() {
       `mistakes increased${breakLine()} by: ${absMistakeDiff}`
     );
   }
-  // 5. Время такое же, но ошибок меньше
+  // 5. Час такий самий, але помилок менше
   else if (timeDiff === 0 && mistakeDiff < 0) {
     updateScoreboard(
       statusMessages.fewerMistakes,
@@ -95,7 +95,7 @@ export function compareResults() {
       `mistakes reduced${breakLine()} by: ${absMistakeDiff}`
     );
   }
-  // 6. Время такое же, но ошибок больше
+  // 6. Час такий самий, але помилок більше
   else if (timeDiff === 0 && mistakeDiff > 0) {
     updateScoreboard(
       statusMessages.noRecord,
@@ -103,7 +103,7 @@ export function compareResults() {
       `mistakes increased${breakLine()} by: ${absMistakeDiff}`
     );
   }
-  // 7. Ошибок столько же, но время хуже
+  // 7. Помилок стільки ж, але час гірший
   else if (mistakeDiff === 0 && timeDiff > 0) {
     updateScoreboard(
       statusMessages.noRecord,
@@ -111,7 +111,7 @@ export function compareResults() {
       `mistakes are${breakLine()} unchanged`
     );
   }
-  // 8. Ошибок столько же, но время лучше
+  // 8. Помилок стільки ж, але час кращий
   else if (mistakeDiff === 0 && timeDiff < 0) {
     updateScoreboard(
       statusMessages.betterTime,
@@ -119,7 +119,7 @@ export function compareResults() {
       `mistakes are${breakLine()} unchanged`
     );
   }
-  // 9. Время и ошибки такие же, как и были
+  // 9. Час і помилки такі самі, як і були
   else if (timeDiff === 0 && mistakeDiff === 0) {
     updateScoreboard(
       statusMessages.noRecord,

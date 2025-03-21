@@ -2,30 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 viewport-fit=cover" >
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <!-- Опис сторінки -->
   <meta name="description" content="A meditative pair-matching game with a relaxing atmosphere.">
 
+  <!-- Підключення шрифту -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100..900&display=block" rel="stylesheet">
 
+  <!-- Фавікон та маніфест -->
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="manifest" href="/favicon/site.webmanifest">
 
+  <!-- Основний JS -->
   <script defer type="module" src="src/main.js"></script>
+  <!-- Основний CSS -->
   <link rel="stylesheet" href="src/style.css">
+
   <title>Calm Pairs</title>
 </head>
 
 <body>
+<!-- Фон з літаючими бульбашками -->
 <div class="background"></div>
 
 <div class="game-container">
-
+  <!-- Екран завантаження -->
   <div class="loading-screen">
     <p class="loading-screen__text">loading calmness…</p>
     <div class="loading-screen__indicator">
@@ -39,20 +46,22 @@
   </div>
 
   <div class="board no-visible">
-
     <div class="choice-level no-visible no-interaction">
       <p class="choice-level__title">choose level</p>
-      <button data-level="easy" class="buttons buttons__choice-level ">easy</button>
-      <button data-level="basic" class="buttons buttons__choice-level ">basic</button>
-      <button data-level="medium" class="buttons buttons__choice-level ">medium</button>
-      <button data-level="hard" class="buttons buttons__choice-level ">hard</button>
+      <button data-level="easy" class="buttons buttons__choice-level">easy</button>
+      <button data-level="basic" class="buttons buttons__choice-level">basic</button>
+      <button data-level="medium" class="buttons buttons__choice-level">medium</button>
+      <button data-level="hard" class="buttons buttons__choice-level">hard</button>
     </div>
 
+    <!-- Результати гри -->
     <div class="results element-hidden no-visible">
       <h1 class="results__title">game summary</h1>
       <hr>
       <div class="results__indicators-wrapper">
         <div class="results__counters-wrapper">
+
+          <!-- Лічильник часу у грі -->
           <div class="results-counters-board results-time">
             <h1 class="results-counters-board__title">time</h1>
             <div class="results-counters-board__values-wrapper time-wrapper">
@@ -60,7 +69,7 @@
                 <span class="results-counters-board__values_counter time-current-counter"></span>
               </p>
               <p class="results-counters-board__values time-previous">previous:
-                <span class=" results-counters-board__values_counter time-previous-counter"></span>
+                <span class="results-counters-board__values_counter time-previous-counter"></span>
               </p>
             </div>
             <hr class="results-counters-board__time-compare-line results-counters-board__compare-line">
@@ -71,6 +80,7 @@
             </div>
           </div>
 
+          <!-- Лічильник помилок у грі-->
           <div class="results-counters-board results-mistakes">
             <h1 class="results-counters-board__title">mistakes</h1>
             <div class="results-counters-board__values-wrapper mistakes-wrapper">
@@ -89,27 +99,35 @@
             </div>
           </div>
         </div>
+
+        <!-- Повідомлення про рекорд після завершення гри -->
         <h1 class="results__status-message"></h1>
       </div>
       <hr>
+
+      <!-- Кнопка нової гри -->
       <div class="results__button-container">
-      <button class="buttons buttons__new-game ">start new game</button>
+        <button class="buttons buttons__new-game">start new game</button>
       </div>
     </div>
   </div>
 
+  <!-- Активна зона гри, що відображається під час гри -->
   <div class="active-game element-hidden no-visible">
     <div class="active-game__counters">
+      <!-- Відображення таймера гри -->
       <div class="active-game__timer">time:&nbsp;<span class="time-counter">00:00</span></div>
       <hr class="active-game__counters-line">
+      <!-- Відображення лічильника помилок -->
       <div class="active-game__mistakes">mistakes:&nbsp;<span class="mistakes-counter">0</span></div>
     </div>
 
     <div class="active-game__buttons">
+      <!-- Кнопки для перезапуску рівня та зміни рівня -->
       <button class="buttons buttons__active-game restart-level">restart level</button>
       <button class="buttons buttons__active-game another-level">another level</button>
     </div>
   </div>
-  </div>
+</div>
 </body>
 </html>
