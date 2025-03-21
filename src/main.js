@@ -3,7 +3,7 @@ import { preloadImages } from './js/preload/preloadImages.js';
 import { backgroundStart } from './js/ui/background.js';
 import { compareCards } from './js/compareCards.js';
 import { restartLevelButton } from './js/buttons/restartLevelButton.js';
-import { handleLevelClick } from './js/buttons/anotherLevelButton.js';
+import { handleLevelClick } from './js/buttons/handleLevelClick.js';
 import { checkAllCardsMatched } from './js/matchChecker.js';
 import { GAME_CONFIG, SELECTORS } from './js/gameState.js';
 import { UI_LEVEL_BUTTONS } from './js/ui/uiActions.js';
