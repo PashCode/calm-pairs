@@ -19,8 +19,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="manifest" href="/favicon/site.webmanifest">
 
-  <!-- Основний JS -->
-  <script defer type="module" src="src/main.js"></script>
+  <!-- Основний TS -->
+  <script defer type="module" src="src/main.ts"></script>
   <!-- Основний CSS -->
   <link rel="stylesheet" href="src/style.css">
 
@@ -47,7 +47,7 @@
 
   <div class="board no-visible">
     <div class="choice-level no-visible no-interaction">
-      <p class="choice-level__title">choose level</p>
+      <p class="choice-level__title no-interaction">choose level</p>
       <button data-level="easy" class="buttons buttons__choice-level">easy</button>
       <button data-level="basic" class="buttons buttons__choice-level">basic</button>
       <button data-level="medium" class="buttons buttons__choice-level">medium</button>
@@ -66,10 +66,10 @@
             <h1 class="results-counters-board__title">time</h1>
             <div class="results-counters-board__values-wrapper time-wrapper">
               <p class="results-counters-board__values">current:
-                <span class="results-counters-board__values_counter time-current-counter"></span>
+                <span class="results-counters-board__values-counter time-current-counter"></span>
               </p>
               <p class="results-counters-board__values time-previous">previous:
-                <span class="results-counters-board__values_counter time-previous-counter"></span>
+                <span class="results-counters-board__values-counter time-previous-counter"></span>
               </p>
             </div>
             <hr class="results-counters-board__time-compare-line results-counters-board__compare-line">
@@ -113,19 +113,19 @@
   </div>
 
   <!-- Активна зона гри, що відображається під час гри -->
-  <div class="active-game element-hidden no-visible">
-    <div class="active-game__counters">
+  <div class="game-toolbar element-hidden no-visible">
+    <div class="game-toolbar__counters">
       <!-- Відображення таймера гри -->
-      <div class="active-game__timer">time:&nbsp;<span class="time-counter">00:00</span></div>
-      <hr class="active-game__counters-line">
+      <div class="game-toolbar__timer">time:&nbsp;<span class="time-counter">00:00</span></div>
+      <hr class="game-toolbar__counters-line">
       <!-- Відображення лічильника помилок -->
-      <div class="active-game__mistakes">mistakes:&nbsp;<span class="mistakes-counter">0</span></div>
+      <div class="game-toolbar__mistakes">mistakes:&nbsp;<span class="mistakes-counter">0</span></div>
     </div>
 
-    <div class="active-game__buttons">
+    <div class="game-toolbar__buttons">
       <!-- Кнопки для перезапуску рівня та зміни рівня -->
-      <button class="buttons buttons__active-game restart-level">restart level</button>
-      <button class="buttons buttons__active-game another-level">another level</button>
+      <button class="buttons buttons__game-toolbar button-restart-level">restart level</button>
+      <button class="buttons buttons__game-toolbar button-another-level">another level</button>
     </div>
   </div>
 </div>

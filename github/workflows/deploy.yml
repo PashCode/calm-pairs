@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       # Setup Nodejs
-      - name: Setup Node.js
+      - name: Setup Node.ts
         uses: actions/setup-node@v4
         with:
           node-version: 20
