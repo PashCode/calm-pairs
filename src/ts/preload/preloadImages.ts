@@ -1,24 +1,30 @@
 import { GAME_CONFIG } from '../gameState';
 
-export async function preloadImages(): Promise<HTMLImageElement[]> {
-  // Масив шляхів до всіх зображень, які потрібно завантажити
+// Кеш попередньо завантажених зображень
+export const imageCache: Record<string, HTMLImageElement> = {};
+
+// Шляхи: фонова карточка + усі видимі карточки
+export async function preloadImages(): Promise<void> {
   const preloadImagePaths: string[] = [
     'img/hidden-card.jpg',
-    // Генеруємо шляхи до всіх карт з останнього рівня гри (найбільша кількість)
     ...Object.values( GAME_CONFIG.QUANTITY_CARDS ).at( -1 )
-      .map( ( name: string ): string => `img/${ name }-card.png` ),
+      .map( ( name: string ) => `img/${ name }-card.png` ),
   ];
 
-  // Функція для завантаження окремого зображення
-  const loadImage: ( path: string ) => Promise<HTMLImageElement> = async ( path: string ): Promise<HTMLImageElement> => {
-    return new Promise<HTMLImageElement>( ( resolve, reject,
-    ): void => {
-      const img: HTMLImageElement = new Image();
-      img.src = path; // Встановлюємо шлях, що автоматично починає завантаження
-      img.onload = (): void => resolve( img ); // Успішне завантаження
-      img.onerror = (): void => reject( new Error( `Помилка при завантажені зображення: ${ path }` ) ); // Помилка
+  // Завантажує одне зображення та зберігає його у кеш
+  const loadImage = async ( path: string ): Promise<void> => {
+    return new Promise( ( resolve, reject ) => {
+      const img = new Image();
+      img.src = path;
+      img.onload = () => {
+        imageCache[ path ] = img;
+        resolve();
+      };
+      img.onerror = () => reject( new Error( `Failed to load image: ${ path }` ) );
     } );
   };
 
-  return Promise.all( preloadImagePaths.map( loadImage ) );
+  // Чекаємо, поки всі зображення будуть завантажені
+  await Promise.all( preloadImagePaths.map( loadImage ) );
 }
+
